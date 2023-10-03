@@ -36,4 +36,7 @@ function getDiffFromDates (dateFrom, dateTo) {
   return pointDuration;
 }
 
-export { humanizePointDueDateTime, humanizePointDueDate, humanizePointDueTime, getDiffFromDates };
+export {humanizePointDueDateTime,
+  humanizePointDueDate,
+  humanizePointDueTime,
+  getDiffFromDates};
