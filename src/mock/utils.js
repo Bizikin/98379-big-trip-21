@@ -11,6 +11,10 @@ function getRandomValue(items) {
   return items[getRandomInteger(0, items.length - 1)];
 }
 
+function updateItem(items, update) {
+  return items.map((item) => item.id === update.id ? update : item)
+}
+
 let date = dayjs().subtract(getRandomInteger(0, Duration.DAY), 'day').toDate();
 
 function getDate({next}) {
@@ -29,4 +33,4 @@ function getDate({next}) {
   return date;
 }
 
-export {getDate, getRandomInteger, getRandomValue};
+export {getDate, getRandomInteger, getRandomValue, updateItem};
