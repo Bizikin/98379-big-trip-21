@@ -1,4 +1,4 @@
-import TripEventEditView from '../view/trip-event-edit.js';
+import TripEventEditView from '../view/trip-event-edit-view.js';
 import {remove, render, RenderPosition} from '../framework/render.js';
 import {Mode, UserAction, UpdateType, EditType} from '../constants/constants.js';
 

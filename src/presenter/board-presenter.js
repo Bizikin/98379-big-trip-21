@@ -1,8 +1,8 @@
-import TripEventListView from '../view/trip-events-list.js';
-import TripEventInfoView from '../view/trip-info.js';
-import TripEventSortView from '../view/trip-sort.js';
+import TripEventListView from '../view/trip-events-list-view.js';
+import TripEventInfoView from '../view/trip-info-view.js';
+import TripEventSortView from '../view/trip-sort-view.js';
 import {remove, render, RenderPosition} from '../framework/render.js';
-import TripEventNoPointView from '../view/trip-no-point.js';
+import TripEventNoPointView from '../view/trip-no-point-view.js';
 import PointPresenter from './point-presenter.js';
 import {sort} from '../utils/sort.js';
 import {filter} from '../utils/filter.js';
@@ -225,15 +225,15 @@ export default class BoardPresenter {
 
   #renderPoints(points) {
     points.forEach((point) => {
-      const pointPresenter = new PointPresenter({
+      const pointPresentor = new PointPresenter({
         tripEventListComponent: this.#tripEventListComponent.element,
         destinationsModel: this.#destinationsModel,
         offersModel: this.#offersModel,
         onModeChange: this.#handleModeChange,
         onDataChange: this.#handleViewAction
       });
-      pointPresenter.init(point);
-      this.#pointPresenters.set(point.id, pointPresenter);
+      pointPresentor.init(point);
+      this.#pointPresenters.set(point.id, pointPresentor);
     });
   }
 
@@ -273,7 +273,7 @@ export default class BoardPresenter {
   };
 
   #handleModeChange = () => {
-    this.#pointPresenters.forEach((presenter) => presenter.resetView());
+    this.#pointPresenters.forEach((presentor) => presentor.resetView());
     this.#newPointPresenter.destroy();
   };
 

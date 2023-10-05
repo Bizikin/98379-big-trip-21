@@ -12,6 +12,8 @@ export default class TripEventNewButton extends AbstractStatefulView {
   constructor({onNewPointCreateButton, disabled = false}) {
     super();
 
+    const el = document.querySelector('.trip-main__event-add-btn');
+    el.remove();
     this._setState(TripEventNewButton.parseBtnStateToState({disabled}));
     this.#handleNewPointCreateButton = onNewPointCreateButton;
     this._restoreHandlers();
